@@ -22,6 +22,9 @@
 		3EC919BC28950E12008DBF0A /* ImageListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919BB28950E12008DBF0A /* ImageListDataSource.swift */; };
 		3EC919BE28950E85008DBF0A /* ImageListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919BD28950E85008DBF0A /* ImageListDelegate.swift */; };
 		3EC919C12895116C008DBF0A /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919C02895116C008DBF0A /* ImageDownloader.swift */; };
+		3EC919C3289518C5008DBF0A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919C2289518C5008DBF0A /* Coordinator.swift */; };
+		3EC919C52895191B008DBF0A /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919C42895191B008DBF0A /* RootCoordinator.swift */; };
+		3EC919C7289519DA008DBF0A /* ImageListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919C6289519DA008DBF0A /* ImageListCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		3EC919BB28950E12008DBF0A /* ImageListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListDataSource.swift; sourceTree = "<group>"; };
 		3EC919BD28950E85008DBF0A /* ImageListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListDelegate.swift; sourceTree = "<group>"; };
 		3EC919C02895116C008DBF0A /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		3EC919C2289518C5008DBF0A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3EC919C42895191B008DBF0A /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		3EC919C6289519DA008DBF0A /* ImageListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,8 @@
 		3E6593672885F85F00E94D29 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3EC919C2289518C5008DBF0A /* Coordinator.swift */,
+				3EC919C42895191B008DBF0A /* RootCoordinator.swift */,
 				3E6593682885F86600E94D29 /* ImageList */,
 				3E6593692885F86C00E94D29 /* ImageDetail */,
 			);
@@ -98,6 +106,7 @@
 			children = (
 				3E65936B2885F88400E94D29 /* Model */,
 				3E65936A2885F87E00E94D29 /* ViewController */,
+				3EC919C6289519DA008DBF0A /* ImageListCoordinator.swift */,
 			);
 			path = ImageList;
 			sourceTree = "<group>";
@@ -233,11 +242,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC919C7289519DA008DBF0A /* ImageListCoordinator.swift in Sources */,
 				3E65937A2885F8D400E94D29 /* AppDelegate.swift in Sources */,
 				3E6593772885F8BB00E94D29 /* ImageListViewController.swift in Sources */,
+				3EC919C3289518C5008DBF0A /* Coordinator.swift in Sources */,
 				3E65937E2885F91800E94D29 /* ImageDetailViewController.swift in Sources */,
 				3E6593742885F8A800E94D29 /* ImageInfoView.swift in Sources */,
 				3EC919BC28950E12008DBF0A /* ImageListDataSource.swift in Sources */,
+				3EC919C52895191B008DBF0A /* RootCoordinator.swift in Sources */,
 				3EC919BA28950926008DBF0A /* ImageListView.swift in Sources */,
 				3E65936E2885F89100E94D29 /* UnsplashPhoto.swift in Sources */,
 				3E65936F2885F89100E94D29 /* RequestDTO.swift in Sources */,

@@ -15,6 +15,9 @@ class ImageListViewController: UIViewController {
     // MARK: Private Properties
     private let imageDonwolader = ImageDownloader()
     
+    // MARK: Internal Properties
+    weak var coordinator: ImageListCoordinatorDelegate?
+    
     // MARK: - Life Cycles
     override func loadView() {
         self.view = mainView
@@ -53,8 +56,6 @@ class ImageListViewController: UIViewController {
 
 extension ImageListViewController: ImageViewListActionListener {
     func imageViewListDidTapDetailButton(with photo: UnsplashPhoto?) {
-        let detailViewController = ImageDetailViewController()
-        detailViewController.photo = photo
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+        self.coordinator?.goToDetail(with: photo)
     }
 }
