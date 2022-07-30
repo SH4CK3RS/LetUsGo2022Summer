@@ -21,6 +21,7 @@
 		3EC919BA28950926008DBF0A /* ImageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919B928950926008DBF0A /* ImageListView.swift */; };
 		3EC919BC28950E12008DBF0A /* ImageListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919BB28950E12008DBF0A /* ImageListDataSource.swift */; };
 		3EC919BE28950E85008DBF0A /* ImageListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919BD28950E85008DBF0A /* ImageListDelegate.swift */; };
+		3EC919C12895116C008DBF0A /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919C02895116C008DBF0A /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		3EC919B928950926008DBF0A /* ImageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListView.swift; sourceTree = "<group>"; };
 		3EC919BB28950E12008DBF0A /* ImageListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListDataSource.swift; sourceTree = "<group>"; };
 		3EC919BD28950E85008DBF0A /* ImageListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListDelegate.swift; sourceTree = "<group>"; };
+		3EC919C02895116C008DBF0A /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		3E65936A2885F87E00E94D29 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3EC919BF28951155008DBF0A /* Utils */,
 				3E6593712885F89B00E94D29 /* Cells */,
 				3E6593702885F89700E94D29 /* Views */,
 				3E6593762885F8B000E94D29 /* ImageListViewController.swift */,
@@ -144,6 +147,14 @@
 				3E6593722885F8A100E94D29 /* ImageInfoView.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3EC919BF28951155008DBF0A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3EC919C02895116C008DBF0A /* ImageDownloader.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 				3E65936F2885F89100E94D29 /* RequestDTO.swift in Sources */,
 				3E6593802885F95E00E94D29 /* Constants.swift in Sources */,
 				3EC919BE28950E85008DBF0A /* ImageListDelegate.swift in Sources */,
+				3EC919C12895116C008DBF0A /* ImageDownloader.swift in Sources */,
 				3E6593752885F8A800E94D29 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,11 @@ import UIKit
 import SnapKit
 
 class ImageListViewController: UIViewController {
+    // MARK: View Define
     private let mainView = ImageListView()
+    
+    // MARK: Private Properties
+    private let imageDonwolader = ImageDownloader()
     
     // MARK: - Life Cycles
     override func loadView() {
@@ -28,18 +32,22 @@ class ImageListViewController: UIViewController {
     
     // MARK: - Networking
     private func getImages() {
-        let queryString = PhotoRequestDTO(page: 1, perPage: 20).queryString
-        let urlString = "https://api.unsplash.com/photos" + queryString
-        guard let url = URL(string: urlString) else { return }
-        var request = URLRequest(url: url)
-        request.setValue("Client-ID \(Constants.clientId)", forHTTPHeaderField: "Authorization")
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data,
-               let list = try? JSONDecoder().decode([UnsplashPhoto].self, from: data) {
-                self.mainView.imageList = list
+        imageDonwolader.getImages { [weak self] result in
+            switch result {
+            case let .success(imageList):
+                self?.mainView.imageList = imageList
+            case .failure:
+                DispatchQueue.main.async {
+                    self?.showError()
+                }
             }
         }
-        task.resume()
+    }
+    
+    private func showError() {
+        let alert = UIAlertController(title: "오류", message: "이미지 다운로드 실패", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
