@@ -18,8 +18,8 @@ final class ImageListView: UIView {
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        collectionView.dataSource = self
-        collectionView.delegate  = self
+        collectionView.dataSource = dataSource
+        collectionView.delegate  = delegate
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "ImageCell")
         return collectionView
     }()
@@ -50,10 +50,15 @@ final class ImageListView: UIView {
         }
     }
     
+    private var dataSource = ImageListDataSource()
+    private var delegate = ImageListDelegate()
+    
     // MARK: Internal Properties
     weak var listener: ImageViewListActionListener?
     var imageList: [UnsplashPhoto] = [] {
         didSet {
+            self.dataSource.imageList = imageList
+            self.delegate.imageList = imageList
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
@@ -64,11 +69,13 @@ final class ImageListView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        bindAction()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupViews()
+        bindAction()
     }
     
     // MARK: - Layout
@@ -112,41 +119,14 @@ final class ImageListView: UIView {
     }
     
     // MARK: - User Action
+    private func bindAction() {
+        delegate.selectingImageClosure = { [weak self] selectedImage in
+            self?.selectedImage = selectedImage
+        }
+    }
+    
     @objc
     private func goToDetail() {
         listener?.imageViewListDidTapDetailButton(with: selectedImage)
-    }
-}
-
-// MARK: - DataSource & Delegate
-extension ImageListView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageList.count
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCell else {
-            return .init()
-        }
-        let image = self.imageList[indexPath.item]
-        cell.configureCell(with: image)
-        return cell
-    }
-}
-
-extension ImageListView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let image = imageList[indexPath.item]
-        self.selectedImage = image
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = UIScreen.main.bounds.size.width / 5
-        let height = width
-        return .init(width: width, height: height)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return .zero
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return .zero
     }
 }

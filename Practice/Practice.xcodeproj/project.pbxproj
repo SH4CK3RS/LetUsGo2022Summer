@@ -19,6 +19,8 @@
 		3E6593802885F95E00E94D29 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E65937F2885F95E00E94D29 /* Constants.swift */; };
 		3EC919B8289508C7008DBF0A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3EC919B7289508C7008DBF0A /* SnapKit */; };
 		3EC919BA28950926008DBF0A /* ImageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919B928950926008DBF0A /* ImageListView.swift */; };
+		3EC919BC28950E12008DBF0A /* ImageListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919BB28950E12008DBF0A /* ImageListDataSource.swift */; };
+		3EC919BE28950E85008DBF0A /* ImageListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC919BD28950E85008DBF0A /* ImageListDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		3E6593792885F8D400E94D29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E65937F2885F95E00E94D29 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3EC919B928950926008DBF0A /* ImageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListView.swift; sourceTree = "<group>"; };
+		3EC919BB28950E12008DBF0A /* ImageListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListDataSource.swift; sourceTree = "<group>"; };
+		3EC919BD28950E85008DBF0A /* ImageListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 			children = (
 				3E6593732885F8A500E94D29 /* ImageCell.swift */,
 				3EC919B928950926008DBF0A /* ImageListView.swift */,
+				3EC919BB28950E12008DBF0A /* ImageListDataSource.swift */,
+				3EC919BD28950E85008DBF0A /* ImageListDelegate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,10 +226,12 @@
 				3E6593772885F8BB00E94D29 /* ImageListViewController.swift in Sources */,
 				3E65937E2885F91800E94D29 /* ImageDetailViewController.swift in Sources */,
 				3E6593742885F8A800E94D29 /* ImageInfoView.swift in Sources */,
+				3EC919BC28950E12008DBF0A /* ImageListDataSource.swift in Sources */,
 				3EC919BA28950926008DBF0A /* ImageListView.swift in Sources */,
 				3E65936E2885F89100E94D29 /* UnsplashPhoto.swift in Sources */,
 				3E65936F2885F89100E94D29 /* RequestDTO.swift in Sources */,
 				3E6593802885F95E00E94D29 /* Constants.swift in Sources */,
+				3EC919BE28950E85008DBF0A /* ImageListDelegate.swift in Sources */,
 				3E6593752885F8A800E94D29 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
